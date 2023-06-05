@@ -21,6 +21,26 @@ const questions = [
     type: 'input',
     name: 'Installation_instructions',
     message: 'How do you install this?'
+  },
+  {
+    type: 'input',
+    name: 'Usage',
+    message: 'How do you use this?'
+  },
+  {
+    type: 'input',
+    name: 'license',
+    message: 'Who licensed this?'
+  },
+  {
+    type: 'input',
+    name: 'contributions',
+    message: 'Who contributed this?'
+  }
+  {
+    type: 'input',
+    name: 'tests_questions',
+    message: 'What are tests and questions to this?'
   }
 ];
   
@@ -44,7 +64,10 @@ function init() {
       writeToFile("backup.md",text.join("\n"))
 
     });
-
 }
+
+
+
+//where the # key is where u change the heaers and then just add it in 
 init();
 // writeToFile("Test","This is a test");
