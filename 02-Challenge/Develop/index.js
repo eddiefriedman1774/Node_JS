@@ -36,7 +36,7 @@ const questions = [
     type: 'input',
     name: 'contributions',
     message: 'Who contributed this?'
-  }
+  },
   {
     type: 'input',
     name: 'tests_questions',
@@ -61,10 +61,17 @@ function init() {
     inquirer.prompt(questions).then((answers) => {
       var text = []
       text.push("# "+ answers.Title)  
+      text.push("## "+answers.Description)
+      text.push("## "+answers.Installation_instructions)
+      text.push("## "+answers.Usage)
+      text.push("## "+answers.license)
+      text.push("## "+answers.contributions)
+      text.push("## "+answers.tests_questions)
       writeToFile("backup.md",text.join("\n"))
 
     });
 }
+
 
 
 
