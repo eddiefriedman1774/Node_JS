@@ -7,19 +7,19 @@
 5. [tests_questions](#tests_questions)
 6. [license](#license)
 
-![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)
+![GitHub license](https://img.shields.io/badge/license-GPL-blue.svg)
 ## description
-It is about using 2 apis
+
 ## installation_instructions
-via github
+Github
 ## contributions
-Vscode2
+You use this by launching the web
 ## tests_questions
-We all did
+Peter, Eddie, Andrew, and Chris
 ## tests_questions
-None
-[eddiefriedman1774
-](https://github.com/+eddiefriedman1774)eddiefriedman1@gmail.com
+N/a
+[eddiefriedman1774](https://github.com/eddiefriedman1774)
+eddiefriedman1@gmail.com
 ## License 
-Go view https://mit-license.org/ to get information on this license
+Go view https://www.gnu.org/licenses/gpl-3.0.en.html to get information on this license
 

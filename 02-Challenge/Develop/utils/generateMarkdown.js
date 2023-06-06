@@ -64,7 +64,7 @@ function generateMarkdown(data) {
   markdown += "## " + sections[4] + "\n";
   markdown += data.tests_questions + "\n";
 
-  markdown += `[${data.github_un +"\n"}](https://github.com/${data.github_un})`;
+  markdown += `[${data.github_un}](https://github.com/${data.github_un})`+"\n";
 
   markdown += data.email + "\n";
 
