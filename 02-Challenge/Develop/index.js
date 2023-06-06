@@ -1,7 +1,9 @@
 // TODO: Include packages needed for this application
 var inquirer = require('inquirer');
 var fs = require('fs');
+const generateMarkdown = require('./utils/generateMarkdown');
 
+const licenses = ['None', 'MIT', 'BSD', 'GPL', 'Apache']
 
 // TODO: Create an array of questions for user input
 
@@ -9,28 +11,29 @@ const questions = [
 
   {
     type: 'input',
-    name: 'Title',
+    name: 'title',
     message: 'What is the project title?'
   },
   {
     type: 'input',
-    name: 'Description',
+    name: 'description',
     message: 'What is the project description?'
   },
   {
     type: 'input',
-    name: 'Installation_instructions',
+    name: "installation_instructions",
     message: 'How do you install this?'
   },
   {
     type: 'input',
-    name: 'Usage',
+    name: 'usage',
     message: 'How do you use this?'
   },
   {
-    type: 'input',
+    type: 'list',
     name: 'license',
-    message: 'Who licensed this?'
+    message: 'Who licensed this?',
+    choice: licenses 
   },
   {
     type: 'input',
@@ -42,6 +45,11 @@ const questions = [
     name: 'tests_questions',
     message: 'What are tests and questions to this?'
   }
+  {
+    type: 'input',
+    name: 'github_un',
+    message: 'What is your github username?'
+  },
 ];
   
 //this is an object
@@ -59,16 +67,8 @@ function init() {
        
    
     inquirer.prompt(questions).then((answers) => {
-      var text = []
-      text.push("# "+ answers.Title)  
-      text.push("## "+answers.Description)
-      text.push("## "+answers.Installation_instructions)
-      text.push("## "+answers.Usage)
-      text.push("## "+answers.license)
-      text.push("## "+answers.contributions)
-      text.push("## "+answers.tests_questions)
-      writeToFile("backup.md",text.join("\n"))
-
+     let text = generateMarkdown(answers)
+      writeToFile("backup.md",text)
     });
 }
 
