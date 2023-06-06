@@ -4,6 +4,7 @@ function renderLicenseBadge(license) {
   return `![GitHub license](https://img.shields.io/badge/license-${license}-blue.svg)`;
 }
 
+
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 function renderLicenseLink(license) {
@@ -27,9 +28,11 @@ function renderLicenseLink(license) {
 // If there is no license, return an empty string
 function renderLicenseSection(license) {
   let licenseSect = "";
+  licenseSect += "## License \n"
   if (license != "None") {
-    licenseSect += "## License \n"
     licenseSect += "Go view " + renderLicenseLink(license)+ " to get information on this license\n";
+  }else {
+    licenseSect += "No license provided";
   }
   return licenseSect;
 }
@@ -38,6 +41,13 @@ function renderLicenseSection(license) {
 function generateMarkdown(data) {
   const sections = ["description", "installation_instructions","usage", "contributions", "tests_questions", "license"];
   let markdown = "# " + data.title + "\n";
+  markdown += "## Table of Contents\n";
+  for (let i=0; i<sections.length; i++) {
+    if (! (sections[i] === "License" && data.license === "None")) {
+      markdown += i+1 + ". [" + sections[i] + "](#" + sections[i][0].toLowerCase() + sections[i].substring(1) + ")\n";
+    }
+  }
+  markdown += "\n";
   markdown += renderLicenseBadge(data.license) + "\n";
   markdown += "## " + sections[0]+ "\n";
   markdown += data.description + "\n";
@@ -54,7 +64,8 @@ function generateMarkdown(data) {
   markdown += "## " + sections[4] + "\n";
   markdown += data.tests_questions + "\n";
 
-  markdown += data.github_un + "\n";
+  markdown += `[${data.github_un +"\n"}](https://github.com/${data.github_un})`;
+
   markdown += data.email + "\n";
 
 

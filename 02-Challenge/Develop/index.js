@@ -33,7 +33,7 @@ const questions = [
     type: 'list',
     name: 'license',
     message: 'Who licensed this?',
-    choice: licenses 
+    choices: licenses 
   },
   {
     type: 'input',
@@ -44,11 +44,16 @@ const questions = [
     type: 'input',
     name: 'tests_questions',
     message: 'What are tests and questions to this?'
-  }
+  },
   {
     type: 'input',
     name: 'github_un',
     message: 'What is your github username?'
+  },
+  {
+    type: 'input',
+    name: 'email',
+    message: 'What is your email address?'
   },
 ];
   
